@@ -1,0 +1,71 @@
+{
+  "name": "vsce-workspace-sort",
+  "displayName": "Sort Workspace Folders",
+  "description": "Sort workspace folders by name or path",
+  "version": "0.0.1",
+  "publisher": "houengineer",
+  "engines": {
+    "vscode": "^1.90.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "keywords": [
+    "sort",
+    "workspace",
+    "folders",
+    "排序",
+    "工作区",
+    "文件夹"
+  ],
+  "activationEvents": [],
+  "main": "./out/extension.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HouEngineer/vsce-workspace-sort.git"
+  },
+  "icon": "images/icon.png",
+  "contributes": {
+    "commands": [
+      {
+        "command": "extension.sortByName",
+        "title": "%extension.sortByName%"
+      },
+      {
+        "command": "extension.sortByPath",
+        "title": "%extension.sortByPath%"
+      }
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "extension.sortByName",
+          "group": "navigation"
+        },
+        {
+          "command": "extension.sortByPath",
+          "group": "navigation"
+        }
+      ]
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.90.0",
+    "@types/mocha": "^10.0.6",
+    "@types/node": "18.x",
+    "@typescript-eslint/eslint-plugin": "^7.4.0",
+    "@typescript-eslint/parser": "^7.4.0",
+    "eslint": "^8.57.0",
+    "typescript": "^5.3.3",
+    "@vscode/test-cli": "^0.0.8",
+    "@vscode/test-electron": "^2.3.9"
+  }
+}
