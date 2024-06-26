@@ -2,7 +2,7 @@
   "name": "vsce-workspace-sort",
   "displayName": "Sort Workspace Folders",
   "description": "Sort workspace folders by name or path",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "publisher": "houengineer",
   "engines": {
     "vscode": "^1.90.0"
@@ -16,7 +16,8 @@
     "folders",
     "排序",
     "工作区",
-    "文件夹"
+    "文件夹",
+    "工作区排序"
   ],
   "activationEvents": [],
   "main": "./out/extension.js",
@@ -40,11 +41,11 @@
       "explorer/context": [
         {
           "command": "extension.sortByName",
-          "group": "navigation"
+          "group": "navigation@100"
         },
         {
           "command": "extension.sortByPath",
-          "group": "navigation"
+          "group": "navigation@100"
         }
       ]
     }
